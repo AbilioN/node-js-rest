@@ -21,8 +21,9 @@ class CreateUserService
         {
             throw new AppError('Email address already used');
         }
-
+        const id = usersRepository.generateNewId();
         const user = usersRepository.create({
+            id,
             name,
             email,
             password,

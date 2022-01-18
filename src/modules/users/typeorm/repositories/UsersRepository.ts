@@ -1,5 +1,6 @@
 import { EntityRepository, Repository } from "typeorm";
 import User from "../entities/User";
+import {v4 as uuidV4 } from 'uuid';
 
 @EntityRepository(User)
 class UsersRepository extends Repository<User>
@@ -35,6 +36,11 @@ class UsersRepository extends Repository<User>
         })
 
         return user;
+    }
+
+    public generateNewId() : string
+    {
+        return uuidV4();
     }
 }
 

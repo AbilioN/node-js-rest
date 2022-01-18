@@ -17,7 +17,7 @@ export class ProductRepository extends Repository<Product>
         return product;
     }
 
-    public generateNewId() : String
+    public generateNewId() : string
     {
         return uuidV4();
     }
