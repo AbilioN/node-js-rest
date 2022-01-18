@@ -24,7 +24,7 @@ productsRouter.post(
     celebrate({
         [Segments.BODY] :  {
             name: Joi.string().required(),
-            price: Joi.number().required(),
+            price: Joi.number().precision(2).required(),
             quantity: Joi.number().required(),
         }
     }),
@@ -35,7 +35,7 @@ productsRouter.put(
         [Segments.BODY] :  {
             id: Joi.string().uuid().required(),
             name: Joi.string().required(),
-            price: Joi.number().required(),
+            price: Joi.number().precision(2).required(),
             quantity: Joi.number().required(),
         }
     }),
