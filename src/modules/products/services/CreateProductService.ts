@@ -21,7 +21,9 @@ class CreateProductService
             throw new AppError('There is already a product with this name');
         }
 
+        const id = productsRepository.generateNewId();
         const product = productsRepository.create({
+            id,
             name,
             price,
             quantity
