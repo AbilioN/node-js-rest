@@ -1,5 +1,4 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
-import {v4 as uuidV4 } from 'uuid';
 
 export class CreateProducts1642445191414 implements MigrationInterface {
 
