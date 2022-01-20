@@ -29,9 +29,19 @@ class SendForgotPasswordEmailService
         console.log(token);
         
         await EtherealMail.sendEmail({
-            to: email,
-            body : `Recorvery password token : ${token?.token}`
-        })
+            to: {
+                name : user.name,
+                email : user.email,
+            },
+            subject : 'Api type password recorvery',
+            templateData : {
+                template : `Ola {{name}}  : {{token}}`,
+                variables : {
+                    name : user.name,
+                    token : token?.token,
+                }
+            }
+        });
     
     }
 }
