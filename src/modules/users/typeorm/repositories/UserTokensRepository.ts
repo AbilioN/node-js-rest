@@ -21,6 +21,7 @@ class UserTokensRepository extends Repository <UserToken>
     {
         const userToken = await this.create({
             id : this.generateNewId(),
+            token : this.generateNewId(),
             user_id : user_id,
         });
 
